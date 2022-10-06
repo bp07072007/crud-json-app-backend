@@ -4,6 +4,7 @@ import {
   AddOperationContact,
   getSingleContactData,
   UpdateContactDate,
+  DeleteContactOperation,
 } from "../utils/operationAction.js";
 
 export default class ContactService {
@@ -54,6 +55,18 @@ export default class ContactService {
     try {
       const ContactUpdate = UpdateContactDate(id, params);
       return ContactUpdate;
+    } catch (error) {
+      return {
+        status: "Error",
+        message: ERR_CUSTOM[500].message,
+      };
+    }
+  }
+
+  static async DeleteContact(id) {
+    try {
+      const ContactDalete = DeleteContactOperation(id);
+      return ContactDalete;
     } catch (error) {
       return {
         status: "Error",

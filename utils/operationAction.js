@@ -49,3 +49,14 @@ export const UpdateContactDate = (id, params) => {
 
   return saveContactData(existContact);
 };
+
+// Delet operation for deleting a contact record
+
+export const DeleteContactOperation = (id) => {
+  var existContact = getContactData();
+  existContact.Contact = existContact.Contact.filter(function (item) {
+    return item.id != id;
+  });
+
+  return saveContactData(existContact);
+};
