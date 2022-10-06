@@ -13,6 +13,12 @@ import {
 
   DeleteContactOperation,
   ChangeStatusContactOperation,
+  ViewContactOperation,
+
+
+  DeleteContactOperation,
+  ChangeStatusContactOperation,
+
 
 
 
@@ -21,6 +27,7 @@ import {
 
 export default class ContactService {
   // Get all Contact detail from JSON File
+
 
 
 
@@ -35,6 +42,7 @@ export default class ContactService {
 import { getContactData } from "../utils/operationAction.js";
 
 export default class ContactService {
+
 
 
 
@@ -143,6 +151,7 @@ export default class ContactService {
 
 
 
+
  // ADD FUNCTIONALITY for th contact
     static async AddContact(params) {
       try {
@@ -160,6 +169,7 @@ export default class ContactService {
     }
 
   
+
 
 
 

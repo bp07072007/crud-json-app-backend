@@ -32,6 +32,11 @@ export const AddOperationContact = (params) => {
 export const AddOperationContact = (params) => {
 
 
+// Add Contact into JSON file
+
+export const AddOperationContact = (params) => {
+
+
 
 
 export const AddOperationContact = (params) => {
@@ -46,6 +51,7 @@ export const getSingleContactData = (id) => {
 };
 
 export const AddOperationContact = (params) => {
+
 
 
 
@@ -94,7 +100,12 @@ export const UpdateContactDate = (id, params) => {
 
 
 
+// Delet operation for deleting a contact record
+
+
+
 // Delete operation for deleting a contact record
+
 
 
 
