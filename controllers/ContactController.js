@@ -151,4 +151,39 @@ export default class {
     }
   }
 
+
+  static async DeleteContact(req, res) {
+    try {
+      // Check the id is passing or not
+
+      if (!req.params.id) {
+        return {
+          status: "Error",
+          message: ERR_CUSTOM.id.message,
+        };
+      }
+      //Get the id from the URL.
+      const id = req.params.id;
+      //checking the data in database or not.
+      const ContactData = await ContactService.GetContact(id);
+      if (!ContactData) {
+        return {
+          status: "Error",
+          message: ERR_CUSTOM.notfound.message,
+        };
+      }
+      //Calling the service section
+      const Contact = await ContactService.DeleteContact(id);
+      return res.status(HTTPStatus.OK).json({
+        status: "success",
+        message: "deleted the Contact data",
+      });
+    } catch (error) {
+      return res.status(HTTPStatus[401]).json({
+        status: "Error",
+        message: ERR_CUSTOM[401].message,
+      });
+    }
+  }
+
 }

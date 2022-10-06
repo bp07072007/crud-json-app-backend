@@ -5,10 +5,12 @@ import {
   AddOperationContact,
   getSingleContactData,
   UpdateContactDate,
+
 } from "../utils/operationAction.js";
 
 export default class ContactService {
   // Get all Contact detail from JSON File
+
 
 
 import { getContactData,AddOperationContact } from "../utils/operationAction.js";
@@ -20,6 +22,7 @@ export default class ContactService {
 import { getContactData } from "../utils/operationAction.js";
 
 export default class ContactService {
+
 
 
   static async GetAllContact() {
@@ -78,6 +81,19 @@ export default class ContactService {
   }
 
 
+  static async DeleteContact(id) {
+    try {
+      const ContactDalete = DeleteContactOperation(id);
+      return ContactDalete;
+    } catch (error) {
+      return {
+        status: "Error",
+        message: ERR_CUSTOM[500].message,
+      };
+    }
+  }
+
+
 
  // ADD FUNCTIONALITY for th contact
     static async AddContact(params) {
@@ -96,6 +112,7 @@ export default class ContactService {
     }
 
   
+
 
 
 }
