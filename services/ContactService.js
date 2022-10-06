@@ -6,6 +6,7 @@ import {
   UpdateContactDate,
   DeleteContactOperation,
   ChangeStatusContactOperation,
+  ViewContactOperation,
 } from "../utils/operationAction.js";
 
 export default class ContactService {
@@ -88,6 +89,22 @@ export default class ContactService {
         status: "Error",
         message: ERR_CUSTOM[500].message,
       };
+    }
+  }
+
+  static async ViewContact(id) {
+    try {
+      
+      //Get particular records
+      const ContactSingle = ViewContactOperation(id);
+
+      return ContactSingle;
+    } catch (error) {
+      return {
+        status: "Error",
+        message: ERR_CUSTOM[500].message,
+      };
+      
     }
   }
 }

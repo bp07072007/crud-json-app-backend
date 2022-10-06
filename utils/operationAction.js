@@ -66,3 +66,12 @@ export const ChangeStatusContactOperation = (id, cstatus) => {
   existContact.Contact.find((o) => o.id === id).cstatus = cstatus;
   return saveContactData(existContact);
 };
+
+export const ViewContactOperation = (id) => {
+  const existContact = getContactData();
+
+  existContact.Contact = getContactData().Contact.find((o) => o.id === id);
+
+  return existContact;
+};
+
