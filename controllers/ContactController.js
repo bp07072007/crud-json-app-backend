@@ -67,6 +67,7 @@ export default class {
     }
   }
 
+
   static async SingleContact(req, res) {
     try {
       const id = req.params.id;
@@ -149,4 +150,5 @@ export default class {
       });
     }
   }
+
 }
