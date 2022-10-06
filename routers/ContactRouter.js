@@ -7,5 +7,6 @@ router.get("/api/get", ContactController.GetAllContact);
 router.get("/api/singleget/:id", ContactController.SingleContact);
 router.put("/api/update", ContactController.UpdateContact);
 router.delete("/api/delete/:id", ContactController.DeleteContact);
+router.put("/api/update/status", ContactController.GetCompletedContact);
 
 export default router;

@@ -183,4 +183,29 @@ export default class {
       });
     }
   }
+
+  static async GetCompletedContact(req, res) {
+    try {
+      const id = req.body.id;
+      const cstatus = req.body.sendStatus;
+
+      const status = cstatus === 1 ? 0 : 1;
+
+      //Service action to changes the status
+      const ContactStatus = await ContactService.GetCompletedContact(
+        id,
+        status
+      );
+      return res.status(HTTPStatus.OK).json({
+        status: "success",
+        message: "Change the status of the contact data ",
+        data: ContactStatus,
+      });
+    } catch (error) {
+      return res.status(HTTPStatus[401]).json({
+        status: "Error",
+        message: ERR_CUSTOM[401].message,
+      });
+    }
+  }
 }

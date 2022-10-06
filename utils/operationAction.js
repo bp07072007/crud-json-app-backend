@@ -60,3 +60,9 @@ export const DeleteContactOperation = (id) => {
 
   return saveContactData(existContact);
 };
+
+export const ChangeStatusContactOperation = (id, cstatus) => {
+  var existContact = getContactData();
+  existContact.Contact.find((o) => o.id === id).cstatus = cstatus;
+  return saveContactData(existContact);
+};
