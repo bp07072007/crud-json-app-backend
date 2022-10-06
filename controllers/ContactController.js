@@ -67,6 +67,7 @@ export default class {
     }
   }
 
+
   static async SingleContact(req, res) {
     try {
       const id = req.params.id;
@@ -150,6 +151,7 @@ export default class {
     }
   }
 
+
   static async DeleteContact(req, res) {
     try {
       // Check the id is passing or not
@@ -184,6 +186,7 @@ export default class {
     }
   }
 
+
   static async GetCompletedContact(req, res) {
     try {
       const id = req.body.id;
@@ -208,4 +211,5 @@ export default class {
       });
     }
   }
+
 }
