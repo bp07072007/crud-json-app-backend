@@ -22,6 +22,11 @@ export const AddOperationContact = (params) => {
 export const AddOperationContact = (params) => {
 
 
+// Add Contact into JSON file
+
+export const AddOperationContact = (params) => {
+
+
 
 
 export const AddOperationContact = (params) => {
@@ -36,6 +41,7 @@ export const getSingleContactData = (id) => {
 };
 
 export const AddOperationContact = (params) => {
+
 
 
 
@@ -81,6 +87,8 @@ export const UpdateContactDate = (id, params) => {
 // Delet operation for deleting a contact record
 
 
+
+
 export const DeleteContactOperation = (id) => {
   var existContact = getContactData();
   existContact.Contact = existContact.Contact.filter(function (item) {
@@ -97,6 +105,7 @@ export const ChangeStatusContactOperation = (id, cstatus) => {
   return saveContactData(existContact);
 };
 
+
 export const ViewContactOperation = (id) => {
   const existContact = getContactData();
 
@@ -104,6 +113,7 @@ export const ViewContactOperation = (id) => {
 
   return existContact;
 };
+
 
 
 
