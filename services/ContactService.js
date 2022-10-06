@@ -1,9 +1,15 @@
 import ERR_CUSTOM from "../utils/error_section.js";
+
 import { getContactData,AddOperationContact } from "../utils/operationAction.js";
 
 export default class ContactService {
 
   // Get all Contact detail from JSON File
+
+import { getContactData } from "../utils/operationAction.js";
+
+export default class ContactService {
+
   static async GetAllContact() {
     try {
       //Get all the Contact information from the database.
@@ -17,6 +23,7 @@ export default class ContactService {
       };
     }
   }
+
 
 
  // ADD FUNCTIONALITY for th contact
@@ -36,4 +43,5 @@ export default class ContactService {
     }
 
   
+
 }
