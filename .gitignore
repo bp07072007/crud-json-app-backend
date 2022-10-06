@@ -1,0 +1,5 @@
+/node_modules 
+#ignore db file
+/database/database.json
+
+
