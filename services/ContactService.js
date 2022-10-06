@@ -5,41 +5,12 @@ import {
   AddOperationContact,
   getSingleContactData,
   UpdateContactDate,
-
   DeleteContactOperation,
   ChangeStatusContactOperation,
   ViewContactOperation,
-
-
-  DeleteContactOperation,
-  ChangeStatusContactOperation,
-  ViewContactOperation,
-
-
-  DeleteContactOperation,
-  ChangeStatusContactOperation,
-
-
-
-
-
 } from "../utils/operationAction.js";
 
-export default class ContactService {
-  // Get all Contact detail from JSON File
 
-
-
-
-
-
-import { getContactData,AddOperationContact } from "../utils/operationAction.js";
-
-export default class ContactService {
-
-  // Get all Contact detail from JSON File
-
-import { getContactData } from "../utils/operationAction.js";
 
 export default class ContactService {
 

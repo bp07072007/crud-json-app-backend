@@ -14,48 +14,8 @@ const saveContactData = (data) => {
 
 // Add Contact into JSON file
 
-export const AddOperationContact = (params) => {
-
-
-// Add Contact into JSON file
 
 export const AddOperationContact = (params) => {
-
-
-// Add Contact into JSON file
-
-export const AddOperationContact = (params) => {
-
-
-// Add Contact into JSON file
-
-export const AddOperationContact = (params) => {
-
-
-// Add Contact into JSON file
-
-export const AddOperationContact = (params) => {
-
-
-
-
-export const AddOperationContact = (params) => {
-
-export const getSingleContactData = (id) => {
-  var existAccounts = getContactData().Contact;
-
-  let foundContact = existAccounts.find((x) => x.id === id);
-  let jsonData = JSON.stringify(foundContact);
-
-  return JSON.parse(jsonData);
-};
-
-export const AddOperationContact = (params) => {
-
-
-
-
-
 
   var existAccounts = getContactData();
 
