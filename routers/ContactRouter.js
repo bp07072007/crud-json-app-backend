@@ -10,6 +10,11 @@ router.put("/api/update", ContactController.UpdateContact);
 
 router.delete("/api/delete/:id", ContactController.DeleteContact);
 router.put("/api/update/status", ContactController.GetCompletedContact);
+router.get("/api/view/:id", ContactController.ViewContact);
+
+
+router.delete("/api/delete/:id", ContactController.DeleteContact);
+router.put("/api/update/status", ContactController.GetCompletedContact);
 
 
 router.delete("/api/delete/:id", ContactController.DeleteContact);
@@ -19,6 +24,7 @@ router.delete("/api/delete/:id", ContactController.DeleteContact);
 router.post("/api/post", ContactController.AddContact);
 
 router.get("/api/get", ContactController.GetAllContact);
+
 
 
 

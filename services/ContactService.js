@@ -8,6 +8,12 @@ import {
 
   DeleteContactOperation,
   ChangeStatusContactOperation,
+  ViewContactOperation,
+
+
+  DeleteContactOperation,
+  ChangeStatusContactOperation,
+
 
 
 
@@ -15,6 +21,7 @@ import {
 
 export default class ContactService {
   // Get all Contact detail from JSON File
+
 
 
 
@@ -28,6 +35,7 @@ export default class ContactService {
 import { getContactData } from "../utils/operationAction.js";
 
 export default class ContactService {
+
 
 
 
@@ -117,6 +125,23 @@ export default class ContactService {
   }
 
 
+  static async ViewContact(id) {
+    try {
+      
+      //Get particular records
+      const ContactSingle = ViewContactOperation(id);
+
+      return ContactSingle;
+    } catch (error) {
+      return {
+        status: "Error",
+        message: ERR_CUSTOM[500].message,
+      };
+      
+    }
+  }
+
+
 
  // ADD FUNCTIONALITY for th contact
     static async AddContact(params) {
@@ -135,6 +160,7 @@ export default class ContactService {
     }
 
   
+
 
 
 

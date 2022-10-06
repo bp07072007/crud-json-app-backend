@@ -212,4 +212,24 @@ export default class {
     }
   }
 
+
+  static async ViewContact(req, res) {
+    try {
+      const id = req.params.id;
+
+      //Calling the service option to get the particular record
+      const ContactView = await ContactService.ViewContact(id);
+      return res.status(HTTPStatus.OK).json({
+        status: "success",
+        message: "fetched completed Contact data ",
+        data: ContactView,
+      });
+    } catch (error) {
+      return res.status(HTTPStatus[401]).json({
+        status: "Error",
+        message: ERR_CUSTOM[401].message,
+      });
+    }
+  }
+
 }
