@@ -11,6 +11,11 @@ const saveContactData = (data) => {
   fs.writeFileSync(dataPath, stringifyData);
 };
 
+
+
+
+export const AddOperationContact = (params) => {
+
 export const getSingleContactData = (id) => {
   var existAccounts = getContactData().Contact;
 
@@ -21,6 +26,7 @@ export const getSingleContactData = (id) => {
 };
 
 export const AddOperationContact = (params) => {
+
   var existAccounts = getContactData();
 
   existAccounts.Contact.push({
@@ -33,6 +39,7 @@ export const AddOperationContact = (params) => {
 
   return saveContactData(existAccounts);
 };
+
 
 export const UpdateContactDate = (id, params) => {
   var existContact = getContactData();
@@ -66,3 +73,4 @@ export const ViewContactOperation = (id) => {
 
   return existContact;
 };
+
