@@ -10,15 +10,9 @@ import {
   ViewContactOperation,
 } from "../utils/operationAction.js";
 
-
-
 export default class ContactService {
 
-
-
-
-
-
+  // Service for get all record of contact
   static async GetAllContact() {
     try {
       //Get all the Contact information from the database.
@@ -32,7 +26,6 @@ export default class ContactService {
       };
     }
   }
-
 
   // ADD FUNCTIONALITY for th contact
   static async AddContact(params) {
@@ -49,6 +42,7 @@ export default class ContactService {
     }
   }
 
+  // Service for get single record
   static async GetContact(id) {
     try {
       const ContactSingleData = getSingleContactData(id);
@@ -62,6 +56,7 @@ export default class ContactService {
     }
   }
 
+  // Servive for update the contact record
   static async UpdateContact(id, params) {
     try {
       const ContactUpdate = UpdateContactDate(id, params);
@@ -74,7 +69,7 @@ export default class ContactService {
     }
   }
 
-
+  // Service for delete the record
   static async DeleteContact(id) {
     try {
       const ContactDalete = DeleteContactOperation(id);
@@ -87,7 +82,7 @@ export default class ContactService {
     }
   }
 
-
+  // Service for completed or not completed
   static async GetCompletedContact(id, cstatus) {
     try {
       //Change operation of the status of the contact
@@ -103,10 +98,9 @@ export default class ContactService {
     }
   }
 
-
+    // Service for view single record
   static async ViewContact(id) {
     try {
-      
       //Get particular records
       const ContactSingle = ViewContactOperation(id);
 
@@ -116,34 +110,21 @@ export default class ContactService {
         status: "Error",
         message: ERR_CUSTOM[500].message,
       };
-      
     }
   }
 
+  // ADD FUNCTIONALITY for th contact
+  static async AddContact(params) {
+    try {
+      const ContactData = AddOperationContact(params);
 
-
-
- // ADD FUNCTIONALITY for th contact
-    static async AddContact(params) {
-      try {
-       
-        const ContactData = AddOperationContact(params);
-        
-        return ContactData;
-      } catch (error) {
-        const err = {
-          status: HTTPStatus.INTERNAL_SERVER_ERROR,
-          message: ERR_CUSTOM[500].message,
-        };
-        throw err;
-      }
+      return ContactData;
+    } catch (error) {
+      return {
+        status: HTTPStatus.INTERNAL_SERVER_ERROR,
+        message: ERR_CUSTOM[500].message,
+      };
+     
     }
-
-  
-
-
-
-
-
-
+  }
 }

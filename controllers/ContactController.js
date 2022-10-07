@@ -4,6 +4,7 @@ import { v4 as UID } from "uuid";
 import HTTPStatus from "http-status";
 
 export default class {
+  // Controller for fetch all list of records
   static async GetAllContact(req, res) {
     try {
       //Controller for getting all information from database.json file
@@ -21,7 +22,7 @@ export default class {
       });
     }
   }
-
+  // Controller for adding new records of contact
   static async AddContact(req, res) {
     try {
       // validate the input fields, we can use middleware validators, as of now doing validation here.
@@ -66,8 +67,7 @@ export default class {
       });
     }
   }
-
-
+  // fetching single contact, when click on Edit button
   static async SingleContact(req, res) {
     try {
       const id = req.params.id;
@@ -88,6 +88,7 @@ export default class {
     }
   }
 
+  // Controller for updating the contact detail
   static async UpdateContact(req, res) {
     try {
       // Form fields validation
@@ -151,7 +152,7 @@ export default class {
     }
   }
 
-
+  // Controller for deleted the contact
   static async DeleteContact(req, res) {
     try {
       // Check the id is passing or not
@@ -186,7 +187,7 @@ export default class {
     }
   }
 
-
+  // Controller for handling the status "Completed" or "Not Completed"
   static async GetCompletedContact(req, res) {
     try {
       const id = req.body.id;
@@ -212,7 +213,7 @@ export default class {
     }
   }
 
-
+  // This is to fetch the single contact record
   static async ViewContact(req, res) {
     try {
       const id = req.params.id;
@@ -231,5 +232,4 @@ export default class {
       });
     }
   }
-
 }

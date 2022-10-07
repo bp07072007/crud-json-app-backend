@@ -11,12 +11,9 @@ const saveContactData = (data) => {
   fs.writeFileSync(dataPath, stringifyData);
 };
 
-
 // Add Contact into JSON file
 
-
 export const AddOperationContact = (params) => {
-
   var existAccounts = getContactData();
 
   existAccounts.Contact.push({
@@ -29,7 +26,6 @@ export const AddOperationContact = (params) => {
 
   return saveContactData(existAccounts);
 };
-
 
 // To get single contact info
 
@@ -44,7 +40,6 @@ export const getSingleContactData = (id) => {
 
 // Updating particular infor
 
-
 export const UpdateContactDate = (id, params) => {
   var existContact = getContactData();
 
@@ -55,21 +50,7 @@ export const UpdateContactDate = (id, params) => {
   return saveContactData(existContact);
 };
 
-
 // Delet operation for deleting a contact record
-
-
-
-// Delet operation for deleting a contact record
-
-
-
-// Delete operation for deleting a contact record
-
-
-
-
-
 
 export const DeleteContactOperation = (id) => {
   var existContact = getContactData();
@@ -80,13 +61,11 @@ export const DeleteContactOperation = (id) => {
   return saveContactData(existContact);
 };
 
-
 export const ChangeStatusContactOperation = (id, cstatus) => {
   var existContact = getContactData();
   existContact.Contact.find((o) => o.id === id).cstatus = cstatus;
   return saveContactData(existContact);
 };
-
 
 export const ViewContactOperation = (id) => {
   const existContact = getContactData();
@@ -95,5 +74,3 @@ export const ViewContactOperation = (id) => {
 
   return existContact;
 };
-
-
