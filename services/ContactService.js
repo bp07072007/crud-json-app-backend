@@ -11,7 +11,6 @@ import {
 } from "../utils/operationAction.js";
 
 export default class ContactService {
-
   // Service for get all record of contact
   static async GetAllContact() {
     try {
@@ -72,8 +71,11 @@ export default class ContactService {
   // Service for delete the record
   static async DeleteContact(id) {
     try {
-      const ContactDalete = DeleteContactOperation(id);
-      return ContactDalete;
+      const ContactDelete = DeleteContactOperation(id);
+      return {
+        status: "success",
+        data: ContactDelete,
+      };
     } catch (error) {
       return {
         status: "Error",
@@ -88,8 +90,10 @@ export default class ContactService {
       //Change operation of the status of the contact
 
       const ContactUpdateStatus = ChangeStatusContactOperation(id, cstatus);
-
-      return ContactUpdateStatus;
+      return {
+        status: "success",
+        data: ContactUpdateStatus,
+      };
     } catch (error) {
       return {
         status: "Error",
@@ -98,7 +102,7 @@ export default class ContactService {
     }
   }
 
-    // Service for view single record
+  // Service for view single record
   static async ViewContact(id) {
     try {
       //Get particular records
@@ -124,7 +128,6 @@ export default class ContactService {
         status: HTTPStatus.INTERNAL_SERVER_ERROR,
         message: ERR_CUSTOM[500].message,
       };
-     
     }
   }
 }
